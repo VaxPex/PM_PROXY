@@ -20,7 +20,8 @@ class TestCommand implements CommandExecutor{
 				$new_port = $args[2];
 				file_put_contents($proxy_path, str_replace(
 					["let proxy_address = '';", "let proxy_port = 19132;"],
-					["let proxy_address = '$new_address';", "let proxy_port = $new_port;"], file_get_contents($proxy_path)));
+					["let proxy_address = '$new_address';", "let proxy_port = $new_port;"],
+					file_get_contents($proxy_path)));
 				$sender->getNetworkSession()->transfer("127.0.0.1", 19133); // dont move
 				exec("node " . $proxy_path);
 			}
