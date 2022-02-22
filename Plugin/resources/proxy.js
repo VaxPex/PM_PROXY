@@ -21,11 +21,6 @@ proxy.on("connect", player => {
         if(name === "text"){
             params.message = "hehe"
         }
-        if(name === "move_player"){
-            console.log(params.x);
-            console.log(params.y);
-            console.log(params.z);
-        }
         console.log(name);
     });
 });
